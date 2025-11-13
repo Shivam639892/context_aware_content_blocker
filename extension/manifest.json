@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Context-Aware YouTube Blocker",
+  "version": "1.0",
+  "description": "Blocks non-educational YouTube videos intelligently using AI.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://www.youtube.com/*", "https://5000-shivam63982-contextawar-fdwryohesyt.ws-us121.gitpod.io/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+ "background": {
+  "scripts": ["background.js"],
+  "persistent": true
+}
+,
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
